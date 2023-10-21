@@ -6,7 +6,7 @@ publicRouter.get('/',(req,res) => {
 publicRouter.get('/about',(req,res) =>{
     res.send('User About');
 });
-// create the universal router with multiple method handling
+// create the universal router with multiple method handling   
 publicRouter.route('/user')
             .all((req,res,next)=>{
                 console.log('I\'m using All');
