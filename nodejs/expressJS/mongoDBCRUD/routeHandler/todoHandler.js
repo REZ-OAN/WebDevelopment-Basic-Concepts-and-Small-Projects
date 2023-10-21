@@ -24,8 +24,44 @@ router.get('/', async(req,res)=>{
             });
         }
 });
-
+// GET ACTIVE TODOS
+router.get("/active", async (req, res) => {
+    try {
+        const todo = new Todo();
+        const data = await todo.findActive();
+        res.status(200).json({
+        data,
+        });
+    } catch {
+        res.status(500).json({
+            error:"Error at the server side"
+        });
+    }
+  });
+// // GET ACTIVE TODOS with callback depricated
+// router.get("/active-callback", (req, res) => {
+//     const todo = new Todo();
+//     todo.findActiveCallBack((err, data) => {
+//       res.status(200).json({
+//         data,
+//       });
+//     });
+//   });
 // get todo by id 
+// GET ACTIVE TODOS by some keywords
+router.get("/learn", async (req, res) => {
+    const data = await Todo.findByJS();
+    res.status(200).json({
+      data,
+    });
+  });
+  // GET TODOS BY LANGUAGE
+router.get("/language", async (req, res) => {
+    const data = await Todo.find().byLanguage("react");
+    res.status(200).json({
+      data,
+    });
+  });
 router.get('/:id',async(req,res)=>{
     
         try {

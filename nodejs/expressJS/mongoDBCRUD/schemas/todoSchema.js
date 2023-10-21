@@ -18,5 +18,28 @@ const todoSchema = mongoose.Schema({
         default : Date.now
     }
 });
+// instance methods
+todoSchema.methods = {
+    findActive : function () {
+        return mongoose.model('Todo').find({status : "active"});
+    },
+    // depricated
+    // findActiveCallBack : function(callback) {
+    //     return mongoose.model('Todo').find({status:'active'},callback);
+    // }
+};
 
+// static methods
+todoSchema.statics = {
+    findByJS: function () {
+      return this.find({ title: /learn/i });
+    },
+  };
+  // query helpers
+todoSchema.query = {
+    byLanguage: function (language) {
+      return this.find({ title: new RegExp(language, "i") }); // new RegExp()
+    },
+  };
+  
 module.exports = todoSchema;
