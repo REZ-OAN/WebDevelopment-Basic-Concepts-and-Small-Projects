@@ -43,12 +43,13 @@ router.post('/signin',async(req,res) =>{
         if(userInfo){
             const userPass = req.body.password;
             const isValid =  await bcrypt.compare(userPass,userInfo[0].password);
-            console.log(isValid);
             if(isValid){
-                const token = jwt.sign({
+                console.log(process.env.JWT_SECRET);
+
+                const token =jwt.sign({
                     username : userInfo[0].username,
                     userId : userInfo[0]._id,
-                },process.env.JWT_SECRET,{expiresIn: '1h',
+                },"WhoIsTheboss",{expiresIn: '1h'
             });
                 res.status(200).json({
                     message : "Login Successful",
