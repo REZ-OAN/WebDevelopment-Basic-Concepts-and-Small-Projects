@@ -20,7 +20,7 @@ function App() {
     <ClickCounter/>
     <HoverCounter/>
     {/** Render Props this also reduces the props drilliing */}
-    <Counter render={(count,incrementCount)=>{
+    {/* <Counter render={(count,incrementCount)=>{
       return (
       <>
       <Click count={count} incrementCount={incrementCount}/>
@@ -35,7 +35,28 @@ function App() {
       </>
       );
       }
-      } />
+      } /> */}
+      {/**
+       * can be written like below
+       */}
+       <Counter>
+        {
+          (count,incrementCount) =>{
+            return (
+              <Click count={count} incrementCount={incrementCount}/>
+            );
+          }
+        }
+       </Counter>
+       <Counter>
+        {
+          (count,incrementCount) =>{
+            return (
+              <Hover count={count} incrementCount={incrementCount}/>
+            );
+          }
+        }
+       </Counter>
     </>
   )
 }

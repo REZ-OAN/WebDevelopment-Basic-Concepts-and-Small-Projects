@@ -11,7 +11,8 @@ class Counter extends React.Component {
         }
         render(){
             const {count} =  this.state;
-            const {render} = this.props;
+            // const {render} = this.props; to use alternate format do like below
+            const {children:render} =this.props;
             return  render(count,this.incrementCount);
            
         }

@@ -3,7 +3,6 @@ export default class Text extends React.Component {
     render (){
         
         const {text,addEmoji,addBracket} = this.props;
-        console.log(text);
         let newText = text;
         if(addEmoji) {
             newText = addEmoji(newText,'💜');
