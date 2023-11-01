@@ -1,3 +1,5 @@
+import ClickCounter from "./HOC/ClickCounter";
+import HoverCounter from "./HOC/HoverCounter";
 import Parent from "./LiftingUpState/Parent";
 import Clock from "./components/Clock";
 import CompostitionEx from "./composition/CompositionEx";
@@ -11,6 +13,9 @@ function App() {
     <Parent/>
     {/**Understanding the composition */}
     <CompostitionEx/>
+    {/**Higher Order Component */}
+    <ClickCounter/>
+    <HoverCounter/>
     </>
   )
 }
