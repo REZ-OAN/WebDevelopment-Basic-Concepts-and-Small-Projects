@@ -6,7 +6,7 @@ class HoverCounter extends React.Component {
         const {count,incrementCount} = this.props;
         return (
             <>
-            <h1 onMouseOver = {incrementCount}>Hovered {count} Times</h1>
+            <h1 onMouseOver = {incrementCount}>Hovered {count} Times By HOC</h1>
             </>
         );
     }
