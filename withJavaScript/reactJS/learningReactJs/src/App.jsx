@@ -1,5 +1,6 @@
 import ClickCounter from "./HOC/ClickCounter";
 import HoverCounter from "./HOC/HoverCounter";
+import Custom from "./Hooks/customHook/Custom";
 import ComplexCounter from "./Hooks/useReducer/ComplexCounter";
 import CounterP from "./Hooks/useReducer/Counter";
 import Khela from "./Hooks/useReducer/FetchingData Application of useState and useEffect/Khela";
@@ -93,6 +94,11 @@ function App() {
         <br/>  
         <Khela/>
         <h1>**UnderStanding useReducer end**</h1>
+        <br/>
+        <br/>
+        <h1>**UnderStanding Creating Custom Hook start**</h1>
+        <Custom/>
+        <h1>**UnderStanding Creating Custom Hook end**</h1>
     </>
   )
 }
