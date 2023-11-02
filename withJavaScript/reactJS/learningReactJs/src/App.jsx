@@ -1,5 +1,10 @@
 import ClickCounter from "./HOC/ClickCounter";
 import HoverCounter from "./HOC/HoverCounter";
+import ComplexCounter from "./Hooks/useReducer/ComplexCounter";
+import CounterP from "./Hooks/useReducer/Counter";
+import Khela from "./Hooks/useReducer/FetchingData Application of useState and useEffect/Khela";
+import MultipleCounter from "./Hooks/useReducer/MultipleCounter";
+import Top from "./Hooks/useReducer/NestedComponents/Top";
 import Parent from "./LiftingUpState/Parent";
 import Click from "./RenderProps/Click";
 import Counter from "./RenderProps/Counter";
@@ -74,6 +79,20 @@ function App() {
         <h1>**UnderStanding ContextAPI start**</h1>
         <Head/>
         <h1>**UnderStanding ContextAPI end**</h1>
+        <h1>**UnderStanding useReducer start**</h1>
+        <h3>Normal Counter</h3>
+        <CounterP/>
+        <h3>Complex Counter</h3>
+        <ComplexCounter/>
+        <h3>Multiple Counter</h3>
+        <MultipleCounter/>
+        <br/>
+        <br/>
+        <Top/>
+        <br/>
+        <br/>  
+        <Khela/>
+        <h1>**UnderStanding useReducer end**</h1>
     </>
   )
 }
