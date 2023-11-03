@@ -1,3 +1,6 @@
+import {Suspense} from "react";
+import Qoute from "./FetchApi/Qoute";
+import TopComp from "./FetchApi/React-Query/TopComp";
 import ClickCounter from "./HOC/ClickCounter";
 import HoverCounter from "./HOC/HoverCounter";
 import Custom from "./Hooks/customHook/Custom";
@@ -13,6 +16,7 @@ import Hover from "./RenderProps/Hover";
 import Clock from "./components/Clock";
 import CompostitionEx from "./composition/CompositionEx";
 import Head from "./contextApi/Head";
+
 function App() {
 
   return (
@@ -99,6 +103,14 @@ function App() {
         <h1>**UnderStanding Creating Custom Hook start**</h1>
         <Custom/>
         <h1>**UnderStanding Creating Custom Hook end**</h1>
+        <h1>**UnderStanding Fetching Data From API start**</h1>
+          <Suspense fallback={<h1>"Loading..."</h1>} >
+            {/** because we have created suspense behaviour in qoute */}
+            <Qoute/>
+          </Suspense>
+          <h2>Fetching Data using React-Query</h2>
+             <TopComp/>
+        <h1>**UnderStanding Fetching Data From API end**</h1>
     </>
   )
 }
