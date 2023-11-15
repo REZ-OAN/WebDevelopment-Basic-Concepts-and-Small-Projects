@@ -1,0 +1,19 @@
+.app {
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    color: rgb(4, 139, 249);
+}
+.app h2 {
+    color: crimson;
+}
+.app h3 {
+    color: black;
+    padding: 10px;
+    bottom: 10%;
+    font-size: 50px;
+}
+.app h3 span {
+    font-size: 50px;
+    color: orangered;
+}
